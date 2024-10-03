@@ -23,5 +23,5 @@ void futuretime(int hours, int minutes)
     {
         hh = hh - 24;
     }
-    cout << hh << ":" << mm;
+    cout << to_string(hh) << ":" << to_string(mm);
 }

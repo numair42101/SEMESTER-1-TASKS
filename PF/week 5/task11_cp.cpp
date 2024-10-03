@@ -1,32 +1,32 @@
 #include <iostream>
 using namespace std;
-void claculatepoolstate(int v, int p1, int p2, float h);
+void claculatepoolstate(int volume,int ratepipe1,int ratepipe2,float hours);
 int main()
 {
-    int v, p1, p2;
-    float h;
+    int volume, ratepipe1,ratepipe2;
+    float hours;
     cout << "Enter the volumr of pool in liters: ";
-    cin >> v;
+    cin >> volume;
     cout << "Enter flow rate of first pipe per hour: ";
-    cin >> p1;
+    cin >> ratepipe1;
     cout << "Enter flow rate of second pipe per hour: ";
-    cin >> p2;
+    cin >> ratepipe2;
     cout << "Enter hours that the worker is absent : ";
-    cin >> h;
-    claculatepoolstate(v, p1, p2, h);
+    cin >> hours;
+    claculatepoolstate(volume, ratepipe1, ratepipe2, hours);
 }
-void claculatepoolstate(int v, int p1, int p2, float h)
+void claculatepoolstate(int volume,int ratepipe1,int ratepipe2,float hours)
 {
     float pool, pipe1, pipe2;
-    pool = (p1 * h) + (p2 * h);
-    pipe1 = (p1 * h) / pool;
-    pipe2 = (p2 * h) / pool;
-    if (pool > v)
+    pool = (ratepipe1 * hours) + (ratepipe2 * hours);
+    pipe1 = (ratepipe1 * hours) / pool;
+    pipe2 = (ratepipe2 * hours) / pool;
+    if (pool > volume)
     {
-        cout << "For " << h << " hours, the pool overflows with " << pool - v << " liters";
+        cout << "For " << hours << " hours, the pool overflows with " << pool - volume << " liters";
     }
-    if (pool <= v)
+    if (pool <= volume)
     {
-        cout << "The pool is " << (pool / v) * 100 << "% full." << " Pipe 1: " << pipe1 * 100 << "% Pipe 2: " << pipe2 * 100 << "%";
+        cout << "The pool is " << (pool / volume) * 100 << "% full." << " Pipe 1: " << pipe1 * 100 << "% Pipe 2: " << pipe2 * 100 << "%";
     }
 }
