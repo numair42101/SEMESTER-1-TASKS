@@ -1,18 +1,21 @@
 #include <iostream>
 using namespace std;
-void futuretime(int hours, int minutes);
+string futuretime(int hours, int minutes);
 int main()
 {
     int hours, minutes;
+    string time;
     cout << "Enter hours: ";
     cin >> hours;
     cout << "Enter minutes : ";
     cin >> minutes;
-    futuretime(hours, minutes);
+    cout << futuretime(hours, minutes);
 }
-void futuretime(int hours, int minutes)
+string futuretime(int hours, int minutes)
 {
     int mm, hh = hours;
+    string result;
+
     mm = minutes + 15;
     if (mm > 59)
     {
@@ -23,5 +26,6 @@ void futuretime(int hours, int minutes)
     {
         hh = hh - 24;
     }
-    cout << to_string(hh) << ":" << to_string(mm);
+    result = to_string(hh) + ":" + to_string(mm);
+    return result;
 }
